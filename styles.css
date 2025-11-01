@@ -1,0 +1,53 @@
+*{box-sizing:border-box;font-family:Segoe UI, system-ui, -apple-system, "Segoe UI Emoji", "Noto Color Emoji", sans-serif}
+body{margin:0;background:#0b0b0f;color:#eee;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:20px;padding:16px;background:linear-gradient(180deg,#111 0%, #0f0f14 100%);border-bottom:1px solid #222}
+header h1{margin:0;font-size:1.3rem}
+.haunt-meter-wrap{display:flex;flex-direction:column;flex:1;max-width:480px}
+.haunt-label{font-size:0.95rem;margin-bottom:6px}
+.haunt-meter{height:18px;background:#222;border-radius:6px;overflow:hidden;border:1px solid #2b2b2b}
+.haunt-fill{height:100%;background:linear-gradient(90deg,#7b1fa2,#e91e63);width:0%;transition:width 300ms ease}
+.controls{display:flex;gap:8px}
+.controls button{background:#151519;color:#fff;border:1px solid #333;padding:6px 10px;border-radius:6px;cursor:pointer}
+main{display:flex;flex:1;padding:18px;gap:18px}
+.sidebar{width:260px;background:linear-gradient(180deg,#0f0f13,#0b0b0f);padding:12px;border-radius:8px;border:1px solid #222}
+.sidebar h2{font-size:1rem;margin:8px 0}
+.tools{display:flex;flex-direction:column;gap:8px}
+.tool-item{display:flex;align-items:center;gap:10px;padding:6px;border-radius:6px;background:linear-gradient(180deg,#101012,#0c0c0e);border:1px solid #222;cursor:grab}
+.tool-item:active{cursor:grabbing}
+.tool-item img{width:40px;height:40px}
+.tool-label{font-size:0.9rem}
+.canvas-wrap{flex:1;background:linear-gradient(180deg,#07070a,#0b0b0f);padding:12px;border-radius:8px;border:1px solid #222}
+.house-area{position:relative;max-width:800px;margin:0 auto}
+.house-area img{width:100%;height:auto;display:block;border-radius:6px}
+.overlay{position:absolute;inset:0;pointer-events:auto}
+.placed-item{position:absolute;transform:translate(-50%,-50%);cursor:default;user-select:none}
+.placed-item .icon{font-size:28px}
+.placed-img{position:absolute;transform:translate(-50%,-50%);cursor:default;user-select:none;width:40px;height:auto}
+.cat-walker{
+	position:absolute;
+	/* position a little above the bottom relative to the house */
+	bottom:4%;
+	/* allow width to be set via JS for responsive sizing; constrain max so it never gets huge */
+	width:auto;
+	max-width:140px;
+	height:auto;
+	pointer-events:auto;
+	z-index:40;
+	animation:cat-walk 12s linear infinite;
+}
+
+@keyframes cat-walk{
+	from{left:100%}
+	to{left:-20%}
+}
+
+/* left-to-right cat walk (used for one-off left->right walkers) */
+@keyframes cat-walk-ltr{
+  from{left:-100%}
+  to{left:110%}
+}
+.hint{color:#8b8b98;margin-top:8px;font-size:0.9rem}
+.icon{font-size:20px}
+
+/* small screens */
+@media (max-width:800px){main{flex-direction:column}.sidebar{width:100%}.canvas-wrap{width:100%}}

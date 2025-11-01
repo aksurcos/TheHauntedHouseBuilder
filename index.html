@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Haunted House Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>The Haunted House Builder</h1>
+    <div class="haunt-meter-wrap">
+      <div class="haunt-label">Haunt-o-meter: <span id="haunt-value">0</span></div>
+      <div class="haunt-meter">
+        <div id="haunt-fill" class="haunt-fill" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="save-btn">Save Layout</button>
+      <button id="clear-btn">Clear Layout</button>
+      <button id="load-btn">Load Layout</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <section>
+        <h2>Spooky Objects & Furniture</h2>
+        <div class="tools">
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="ghost" data-haunt="30">
+            <img src="assets/ghost.png" alt="ghost"/>
+            <div class="tool-label">Ghost (30)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="candle" data-haunt="5">
+            <img src="assets/candle.png" alt="candle"/>
+            <div class="tool-label">Candle (5)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="skull" data-haunt="10">
+            <img src="assets/skull.png" alt="skull"/>
+            <div class="tool-label">Skull (10)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="bug" data-haunt="8">
+            <img src="assets/bug.svg" alt="bug"/>
+            <div class="tool-label">Creepy Bug (8)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="spider" data-haunt="12">
+            <img src="assets/spider.svg" alt="spider"/>
+            <div class="tool-label">Spider (12)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="tombstone" data-haunt="18">
+            <img src="assets/tombstone.png" alt="tombstone"/>
+            <div class="tool-label">Tombstone (18)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="blackcat" data-haunt="7">
+            <img src="assets/blackcat.gif" alt="black cat"/>
+            <div class="tool-label">Black Cat (7)</div>
+          </div>
+
+          <div class="tool-item" draggable="true" data-type="furniture" data-id="bat" data-haunt="15">
+            <img src="assets/bats.gif" alt="bat"/>
+            <div class="tool-label">Bat (15)</div>
+        </div>
+
+        <div class="tool-item" draggable="true" data-type="furniture" data-id="bat" data-haunt="15">
+            <img src="assets/worms.png" alt="worms"/>
+            <div class="tool-label">Worms (30)</div>
+        </div>
+
+        <div class="tool-item" draggable="true" data-type="furniture" data-id="bat" data-haunt="15">
+            <img src="assets/centipede.png" alt="centipede"/>
+            <div class="tool-label">Centipede (20)</div>
+        </div>
+
+
+      </section>
+    </aside>
+
+    <section class="canvas-wrap">
+      <h2>Build your house</h2>
+      <div id="house-area" class="house-area" aria-label="House canvas">
+        <!-- house svg -->
+        <img id="house-img" src="assets/HauntedHouse.png" alt="House" />
+        <!-- overlay for placed items -->
+        <div id="overlay" class="overlay"></div>
+      </div>
+      <p class="hint">Drag assets onto the house image. Right-click a placed item to remove it.</p>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
