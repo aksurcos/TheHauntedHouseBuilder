@@ -78,7 +78,7 @@ function handleHouseDrop(e){
     return
   }
 
-  if(payload.type !== 'furniture' && payload.type !== 'asset') return
+  if(payload.type !== 'objects' && payload.type !== 'asset') return
   const area = $('#house-img')
   const rect = area.getBoundingClientRect()
   // use clientX/Y to get position within image
