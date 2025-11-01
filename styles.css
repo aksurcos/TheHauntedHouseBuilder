@@ -36,6 +36,12 @@ main{display:flex;flex:1;padding:18px;gap:18px}
 	animation:cat-walk 12s linear infinite;
 }
 
+/* selected highlight and resize controls */
+.placed-img.selected{outline:2px solid rgba(255,200,0,0.9);outline-offset:4px;border-radius:6px}
+.resize-controls{display:none;flex-direction:column;gap:6px;background:rgba(0,0,0,0.6);padding:6px;border-radius:6px;backdrop-filter:blur(4px)}
+.resize-btn{background:#201a2b;color:#fff;border:1px solid #444;padding:6px 10px;border-radius:6px;cursor:pointer;font-weight:700;min-width:34px;min-height:30px;font-size:16px}
+.resize-btn:active{transform:translateY(1px)}
+
 @keyframes cat-walk{
 	from{left:100%}
 	to{left:-20%}
