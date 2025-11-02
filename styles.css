@@ -23,23 +23,11 @@ main{display:flex;flex:1;padding:18px;gap:18px}
 .placed-item{position:absolute;transform:translate(-50%,-50%);cursor:default;user-select:none}
 .placed-item .icon{font-size:28px}
 .placed-img{position:absolute;transform:translate(-50%,-50%);cursor:default;user-select:none;width:40px;height:auto}
-.cat-walker{
-	position:absolute;
-	/* position a little above the bottom relative to the house */
-	bottom:4%;
-	/* allow width to be set via JS for responsive sizing; constrain max so it never gets huge */
-	width:auto;
-	max-width:140px;
-	height:auto;
-	pointer-events:auto;
-	z-index:40;
-	animation:cat-walk 12s linear infinite;
-}
 
 .enter-house-btn {
 	position: absolute;
 	padding: 6px 12px;
-	background: white; /* make none to make the buttons no longer visable */
+	background: none; /* make none to make the buttons no longer visable */
 	border: none;
 	cursor: pointer;
 }
@@ -86,18 +74,12 @@ body.fade-out {
 .resize-btn{background:#201a2b;color:#fff;border:1px solid #444;padding:6px 10px;border-radius:6px;cursor:pointer;font-weight:700;min-width:34px;min-height:30px;font-size:16px}
 .resize-btn:active{transform:translateY(1px)}
 
-@keyframes cat-walk{
-	from{left:100%}
-	to{left:-20%}
-}
+.room-links { margin: 1rem 0;  }
+.room-icons { display:flex; gap:1rem; list-style:none; padding:0; margin:0; justify-content:right; }
+.room-icons li { text-align:center; }
+.room-icons img { width:64px; height:64px; display:block; }
+.room-icons a { color:inherit; text-decoration: none; }
 
-/* left-to-right cat walk (used for one-off left->right walkers) */
-@keyframes cat-walk-ltr{
-  from{left:-100%}
-  to{left:110%}
-}
-.hint{color:#8b8b98;margin-top:8px;font-size:0.9rem}
-.icon{font-size:20px}
 
 /* small screens */
 @media (max-width:800px){main{flex-direction:column}.sidebar{width:100%}.canvas-wrap{width:100%}}
