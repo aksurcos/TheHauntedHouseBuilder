@@ -1,6 +1,17 @@
 // Drag-and-drop onto single house image, placement overlay, persist placements
 const STORAGE_KEY = 'haunted-house-placements-v1'
 
+document.querySelectorAll('.enter-house-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-link');
+      document.body.classList.add('fade-out');
+
+    setTimeout(() => {
+      window.location.href = target;
+    }, 600); // match the 0.6s in CSS
+  });
+});
+
 function $(sel){return document.querySelector(sel)}
 function $all(sel){return Array.from(document.querySelectorAll(sel))}
 

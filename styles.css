@@ -36,6 +36,50 @@ main{display:flex;flex:1;padding:18px;gap:18px}
 	animation:cat-walk 12s linear infinite;
 }
 
+.enter-house-btn {
+	position: absolute;
+	padding: 6px 12px;
+	background: white; /* make none to make the buttons no longer visable */
+	border: none;
+	cursor: pointer;
+}
+
+#front-door {
+	transform: translate(320%, -300%);
+	height: 10%;
+	width: 10%;
+	
+}
+
+#bottom-right-window {
+	transform: translate(630%, -300%);
+	height: 10%;
+	width: 10%;
+}
+
+#top-left-window {
+	transform: translate(320%, -450%);
+	height: 10%;
+	width: 10%;
+}
+
+#top-right-window {
+	transform: translate(630%, -450%);
+	height: 10%;
+	width: 10%;
+}
+
+#tower-window {
+	transform: translate(430%, -650%);
+	height: 10%;
+	width: 10%;
+}
+
+body.fade-out {
+	opacity: 0;
+	transition: opacity 0.6s ease;
+}
+
 /* selected highlight and resize controls */
 .placed-img.selected{outline:2px solid rgba(255,200,0,0.9);outline-offset:4px;border-radius:6px}
 .resize-controls{display:none;flex-direction:column;gap:6px;background:rgba(0,0,0,0.6);padding:6px;border-radius:6px;backdrop-filter:blur(4px)}
